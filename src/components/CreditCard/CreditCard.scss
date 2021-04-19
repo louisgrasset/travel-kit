@@ -1,0 +1,58 @@
+@import '../../styles/mixins';
+
+.creditcard {
+    @include component();
+    width: 20rem;
+    color: #fff;
+    &::before {
+        background-color: var(--primary);
+    }
+
+    &__container {
+        align-content: space-between;
+        padding: 1rem;
+        position: relative;
+        display: grid;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        column-gap: 2rem;
+        row-gap: 1rem;
+        height: 100%;
+        grid-template-rows: 2rem 1.6rem 2.3rem;
+    }
+    &__chip {
+        height: 2rem;
+        width: 2rem;
+    }
+    &__numbers {
+        font-size: 1.4rem;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+    &__holder {
+        label {
+            display: block;
+            font-size: 0.6rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: var(--white-alpha-75);
+        }
+        &-name {
+            margin-top: .4rem;
+            display: block;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+    }
+    &__system { 
+        position: absolute;
+        bottom: 0.75rem;
+        right: 1rem;
+        height: auto;
+        max-width: 4rem;
+        justify-self: end;
+        filter: grayscale(1) contrast(0) brightness(100);
+    }
+}

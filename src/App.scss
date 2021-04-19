@@ -1,0 +1,11 @@
+.app {
+  max-width: 100rem;
+  margin: 2rem auto;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  
+  & > * {
+      margin: 1rem;
+  }
+}

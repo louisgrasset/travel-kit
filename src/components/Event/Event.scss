@@ -1,0 +1,58 @@
+@import '../../styles/mixins';
+
+.event {
+    @include component();
+    width: 25rem;
+
+    &__container {
+        display: grid;
+        grid-template-columns: 4rem 1fr;
+        column-gap: 2rem;
+    }
+    &--action {
+        .event__container {
+            grid-template-columns: 4rem 1fr 3rem;
+        }
+    }
+    &__image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 4rem;
+        width: 4rem;
+        border-radius: 1.3rem;
+        background-color: var(--primary);
+        @include shadow();
+
+        &-icon {
+            height: 2.5rem;
+            width: 2.5rem;
+        }
+    }
+    &__dates {
+        &-time {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: "Silka", sans-serif;
+        }
+        &-day {
+            font-size: 1.2rem;
+            color: var(--muted);
+        }
+    }
+    &__action {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 1rem;
+        background-color: var(--primary);
+        @include shadow();
+        &-icon {
+            height: 1.1rem;
+            width: 1.1rem;
+        }
+    }
+}

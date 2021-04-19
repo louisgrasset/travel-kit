@@ -1,0 +1,63 @@
+@import '../../styles/mixins';
+
+.week {
+    @include component();
+    width: 35rem;
+
+    &__container {
+        display: flex;
+        justify-content: space-around;
+    }
+    &__day{
+        $at : &;
+
+        display: grid;
+        position: relative;
+        text-align: center;
+        grid-template-rows: 1fr 1fr;
+        row-gap: .5rem;
+        padding: 1rem 0 1.5rem 0;
+        flex-basis: 3.5rem;  
+        &-name {
+            font-size: 1rem;
+            color: var(--secondary-alpha-50);
+        }
+        &-number {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        &--event {
+            &::after {
+                content: '';
+                position: absolute;
+                top: 2.8rem;
+                right: .5rem;
+                border-radius: 50%;
+                height: .3rem;
+                width: .3rem;
+                background-color: var(--honey);
+            }
+        }
+        &--selected {
+            border-radius: 1.2rem;
+            background-color: var(--primary);
+            @include shadow();
+            &#{$at}{
+                &--event {
+                    &::after {
+                        background-color: var(--white);
+                    }
+                }
+            }
+            #{$at} {
+                &-number {
+                    color: var(--white);
+                }
+                &-name {
+                    color: var(--white-alpha-75);
+                }
+            }
+        }
+    } 
+}

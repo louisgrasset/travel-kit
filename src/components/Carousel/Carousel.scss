@@ -1,0 +1,65 @@
+@import '../../styles/mixins';
+
+.carousel {
+    @include component();
+    width: 25rem;
+    &__container{
+        display: grid;
+        grid-template-rows: auto 4.3rem;
+        row-gap: 1.3rem;
+    }
+    &__slides {
+        cursor: pointer;
+        height: 0;
+        padding-bottom: 56.25%;
+        border-radius: 2.5rem;
+        overflow: hidden;
+        &__wrapper {
+            display: flex;
+            will-change: margin-left;
+            transition: margin-left 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        &-play {
+            cursor: pointer;
+            $play-width: 5;
+            position: absolute;
+            top: calc(50% - #{($play-width / 2) + 2.15}rem);
+            left: calc(50% - #{$play-width / 2}rem);
+            z-index: 2;
+            height: #{$play-width}rem;
+            width: #{$play-width}rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            backdrop-filter: blur(20px);
+            background-color: var(--black-alpha-5);
+            &__icon {
+                height: 2rem;
+                width: 2rem;
+            }
+        }
+    }
+    &__slide {
+        position: relative;
+        flex-basis: 100%;
+        &-image {
+            padding-bottom: 56.25%;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+    &__heading {
+        text-align: center;
+        &-title {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -.1rem;
+            font-family: "Silka", sans-serif;
+        }
+        &-subtitle {
+            margin-top: .4rem;
+            font-size: 1.2rem;
+        }
+    }
+}

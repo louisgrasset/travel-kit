@@ -1,0 +1,68 @@
+@import '../../styles/mixins';
+
+.travel {
+    @include component();
+    width: 30rem;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0.75rem;
+        left: 0.75rem;
+        width: calc(100% - 1.5rem);
+        height: calc(50% - 1rem);
+        z-index: -1;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        background-color: var(--primary);
+    }
+
+    &__container {
+        padding: 1rem;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+    }
+    &__section {
+        &-airports {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+        &-timings {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        &-title {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        &-text {
+            font-size: 1rem;
+            opacity: 0.5;
+        }
+        &-right {
+            text-align: right;
+        }
+        &-divider {
+            $size: 6rem;
+            position: absolute;
+            width: #{$size};
+            height: #{$size};
+            left: calc(50% - #{$size / 2});
+            top: calc(50% - #{$size / 2});
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items:  center;
+            &__icon {
+                top: 0.4rem;
+                position: relative;
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+    }
+}

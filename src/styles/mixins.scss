@@ -1,0 +1,41 @@
+@mixin scrollbars {
+    * {
+        & {
+          ::-webkit-scrollbar-track  {
+            background: transparent;
+          }
+          ::-webkit-scrollbar-thumb {
+            background-color: var(--secondary);
+            border-radius: 20px;
+          }
+          ::-webkit-scrollbar  {
+            width: 8px;
+          }
+        }
+        scrollbar-color: var(--secondary) transparent; /* thumb and track color */
+        scrollbar-width: thin;
+    }      
+}
+@mixin shadow {
+    box-shadow: -0.5rem 0.5rem 2rem var(--primary-alpha-40);
+}
+@mixin component {
+    border-radius: 3.2rem;
+    padding: 2rem;
+    border: 2px solid var(--white-alpha-50);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255,255,255,0.2);
+    position: relative;
+    &::before {
+        z-index: -1;
+        position: absolute;
+        content: '';
+        left: 0.8rem;
+        top: 0.8rem;
+        bottom:0.8rem;
+        right: 0.8rem;
+        border-radius: 2.7rem;
+        background-color: #fff;
+        box-shadow: 0 0 1rem var(--secondary-alpha-5);
+    }
+}

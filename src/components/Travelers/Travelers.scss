@@ -1,0 +1,67 @@
+@import '../../styles/mixins';
+
+.travelers {
+    @include component();
+    width: 25rem;
+
+    &__container {
+        padding: .5rem;
+    }
+    &__title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        font-family: 'Silka', sans-serif;
+    }
+    &__search {
+        position: relative;
+        &-input {
+            outline: none;
+            background-color: var(--primary-alpha-5);
+            padding: .7rem 1rem;
+            border-radius: 1rem;
+            border: none;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            color: var(--primary);
+        }
+        &-action{
+            cursor: pointer;
+            position: absolute;
+            top: calc(50% - 0.75rem);
+            right: 1rem;
+            &__icon {
+                height: 1.5rem;
+                width: 1.5rem;
+            }
+        }
+    }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--muted);
+        font-size: 1rem;
+
+        &-message {
+            text-align: center;
+            width: 100%;
+        }
+
+        &-item {
+            flex-basis: 4rem;
+            text-align: center;
+            &__image {
+                height: 3rem;
+                width: 3rem;
+                border-radius: 50%;
+            }
+            &__name {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}

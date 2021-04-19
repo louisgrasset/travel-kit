@@ -1,0 +1,39 @@
+@import '../../styles/mixins';
+
+.travelers-details {
+    @include component();
+    width: 25rem;
+
+    &__container {
+        padding: .5rem;
+        max-height: 12.5rem;
+        overflow-y: scroll;
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        font-size: 1rem;
+        &-item {
+            display: grid;
+            grid-template-columns: 3rem 1fr;
+            column-gap: 2rem;
+            &:not(:last-child) {
+                margin-bottom: 2rem;
+            }
+            &__image {
+                height: 3rem;
+                width: 3rem;
+                border-radius: 50%;
+            }
+            &__name {
+                font-size: 1rem;
+                font-weight: 700;
+            }
+            &__job, &__time {
+                color: var(--muted);
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
