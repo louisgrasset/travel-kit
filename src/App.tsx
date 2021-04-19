@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { Carousel, CreditCard, Event, Nav, Travel, Travelers, TravelersDetails, Week } from './components';
+import { Attribution, Carousel, CreditCard, Event, Nav, Travel, Travelers, TravelersDetails, Week } from './components';
 import iconDocument from './images/document.svg'
 import iconHome from './images/home.svg'
 import iconMessage from './images/message.svg'
@@ -8,7 +8,8 @@ import iconMessage from './images/message.svg'
 function App() {
   return (
     <div className="app">
-      <p className="attribution">ReactJS implementation of <a target="_blank" rel="noopener" href="https://dribbble.com/ghulaam-rasool">Ghulam Rasool</a>'s work <a target="_blank" rel="noopener" href="https://dribbble.com/shots/14593121-Travel-UI-Elements">available on Dribble</a></p>
+      <Attribution />
+      <p className="attribution-note">ReactJS implementation of <a target="_blank" rel="noreferrer" href="https://dribbble.com/ghulaam-rasool">Ghulam Rasool</a>'s work <a target="_blank" rel="noreferrer" href="https://dribbble.com/shots/14593121-Travel-UI-Elements">available on Dribble</a></p>
       <Travel departure={{
         airport: {
           code: 'NYC',
