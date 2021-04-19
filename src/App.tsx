@@ -8,6 +8,7 @@ import iconMessage from './images/message.svg'
 function App() {
   return (
     <div className="app">
+      <p className="attribution">ReactJS implementation of <a target="_blank" rel="noopener" href="https://dribbble.com/ghulaam-rasool">Ghulam Rasool</a>'s work <a target="_blank" rel="noopener" href="https://dribbble.com/shots/14593121-Travel-UI-Elements">available on Dribble</a></p>
       <Travel departure={{
         airport: {
           code: 'NYC',
